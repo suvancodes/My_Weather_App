@@ -62,7 +62,7 @@ async function getWeather() {
           <span>💨Wind speed ${Wind_speed} </span>
           <span>💨🔄Wind diraction ${Wind_diraction} </span>
           <span>🥵Heat Index ${Heat_Index} </span>
-          <span><img src="https://static.thenounproject.com/png/2136174-200.png" alt="prassure">Pressure ${Pressure} </span>
+          <span><img src="https://static.thenounproject.com/png/2136174-200.png" alt="prassure class = "img1"">Pressure ${Pressure} </span>
           <span>🌡humidity ${humidity} </span>
           <span><p>⏰Last Updated ${Last_Updated} </p> </span>
     `
