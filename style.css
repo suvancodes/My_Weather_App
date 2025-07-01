@@ -77,3 +77,26 @@ button:hover {
   padding: 1rem;
   border-radius: 12px
 }
+
+.card1{
+  line-height: 30px;
+  width: 400% !important;
+  line-break: auto;
+
+}
+
+@media screen and (max-width: 360px) {
+  .card-grid{
+    justify-self: center;
+  }
+  .card{
+    padding: 0;
+  }
+}
+
+img{
+  color: white;
+  background-color: white;
+  width: 15px;
+}
+
