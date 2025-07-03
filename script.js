@@ -26,7 +26,6 @@ async function getWeather() {
       document.getElementById("temp-res").innerHTML = "city not found";
       document.getElementById("feel-res").innerHTML = "city not found";
       document.getElementById("condi-con").innerHTML = "city not found";
-      
       return;
     }
 
@@ -58,13 +57,13 @@ async function getWeather() {
 
     document.getElementById("other-con").innerHTML = `
     <h2>Others</h2>
-          <span>💧Dewpoint ${Dewpoint} </span>
-          <span>💨Wind speed ${Wind_speed} </span>
-          <span>💨🔄Wind diraction ${Wind_diraction} </span>
-          <span>🥵Heat Index ${Heat_Index} </span>
-          <span><img src="https://static.thenounproject.com/png/2136174-200.png" alt="prassure class = "img1"">Pressure ${Pressure} </span>
-          <span>🌡humidity ${humidity} </span>
-          <span><p>⏰Last Updated ${Last_Updated} </p> </span>
+          <span>💧Dewpoint: <span class = "s">${Dewpoint}</span> </span>
+          <span>💨Wind speed: <span class = "s">${Wind_speed}</span> </span>
+          <span>💨🔄Wind diraction: <span class = "s">${Wind_diraction}</span> </span>
+          <span>🥵Heat Index: <span class = "s">${Heat_Index} </span> </span>
+          <span><img src="https://static.thenounproject.com/png/2136174-200.png" alt="prassure" class = "img1">Pressure: <span class = "s">${Pressure}</span> </span>
+          <span>🌡humidity: <span class = "s">${humidity} </span>
+          <span><p>⏰Last Updated: <span class = "s">${Last_Updated}</span> </p> </span>
     `
 
 
