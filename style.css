@@ -40,7 +40,7 @@ input {
   font-size: 16px;
   padding: 0 10px;
   background-color: #3a3535;
-  border: none;
+  border: 2px solid rgb(84, 76, 76);
   color: white;
   border-radius: 8px;
 }
@@ -52,7 +52,7 @@ button {
   cursor: pointer;
   background-color: #ff4b91;
   color: white;
-  border: none;
+  border: 2px solid pink;
   border-radius: 8px;
   transition: 0.3s ease;
 }
@@ -82,7 +82,6 @@ button:hover {
   line-height: 30px;
   width: 400% !important;
   line-break: auto;
-
 }
 
 @media screen and (max-width: 360px) {
@@ -100,3 +99,6 @@ button:hover {
   width: 15px;
 }
 
+.s{
+  color: aqua;
+}
