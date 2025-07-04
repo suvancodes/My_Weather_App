@@ -19,6 +19,7 @@ body {
   width: 90%;
   max-width: 800px;
 }
+
 .logo {
   text-align: center;
   font-size: 32px;
@@ -67,44 +68,62 @@ button:hover {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, .5fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 0.5fr));
   gap: 1rem;
 }
 
 .card {
   background-color: #2a2727;
   padding: 1rem;
-  border-radius: 12px
+  border-radius: 12px;
 }
 
-.card1{
+.card1 {
   line-height: 30px;
   width: 400% !important;
   line-break: auto;
 }
 
 @media screen and (max-width: 360px) {
-  .card-grid{
+  .card-grid {
     justify-self: center;
   }
-  .card{
+  .card {
     padding: 0;
   }
 }
 
-.img1{
+.img1 {
   color: white;
   background-color: white;
   width: 15px;
 }
 
-.s{
+.s {
   color: aqua;
 }
-footer{
+
+footer {
   color: white;
 }
-h1 p{
+
+h1 p {
   font-size: 10px;
   color: white;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ff4b91;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
