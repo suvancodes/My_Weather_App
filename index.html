@@ -10,13 +10,15 @@
 <body>
   <div class="container">
     <div class="logo">
-      <h1>Weather App <p>by Suvankar payra</p></h1>
+      <h1>Weather App <p>by Suvankar Payra</p></h1>
     </div> 
 
     <div class="input-section">
       <input type="text" id="cityInput" placeholder="Enter city name" />
       <button onclick="getWeather()">Get Weather</button>
     </div>
+    
+    <div id="loader" class="loader" style="display: none;"></div>
     
     <div id="weatherResult">
       <div class="card-grid">
@@ -35,19 +37,17 @@
           <div id="feel-res">_ _</div>
         </div>
 
-        <div class="card"  id="condi-con">
+        <div class="card" id="condi-con">
           <h2>Condition</h2>
           <div id="condi-res">_ _</div>
         </div>
-        <div class="card card1" id="other-con">
-          
-        </div>
+
+        <div class="card card1" id="other-con"></div>
       </div>
 
       <div id="forecastResult"></div>
     </div>
   </div>
-  
   
   <script src="script.js"></script>
 </body>
