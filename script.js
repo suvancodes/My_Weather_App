@@ -66,8 +66,6 @@ async function getWeather() {
           <span><p>⏰Last Updated: <span class = "s">${Last_Updated}</span> </p> </span>
     `
 
-
-
     const forecastHTML = data.forecast.forecastday
       .map((day) => {
         return `
@@ -89,3 +87,9 @@ async function getWeather() {
     document.getElementById("weatherResult").innerText = error.message;
   }
 }
+
+document.getElementById("cityInput").addEventListener("keydown",(s)=>{
+  if(s.key === "Enter") {
+    getWeather()
+  }
+})
