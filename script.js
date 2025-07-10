@@ -67,36 +67,36 @@ async function getWeather() {
       <span><p>⏰Last Updated: <span class="s">${Last_Updated}</span></p></span>
     `;
 
-    // 5-Day Forecast
     const forecastHTML = data.forecast.forecastday.map(day => `
-      <div style="margin: 10px; padding: 10px; border: 1px solid #ccc;">
+      <div>
         <h4>${day.date}</h4>
         <img src="${day.day.condition.icon}" alt="icon">
-        <p>Condition: ${day.day.condition.text}</p>
-        <p>Max: ${day.day.maxtemp_c}°C | Min: ${day.day.mintemp_c}°C</p>
+        <p>${day.day.condition.text}</p>
+        <p>Max: ${day.day.maxtemp_c}°C</p>
+        <p>Min: ${day.day.mintemp_c}°C</p>
       </div>
     `).join("");
 
     document.getElementById("forecastResult").innerHTML = `
       <h3>5-Day Forecast</h3>
-      <div style="display: flex; flex-wrap: wrap;">${forecastHTML}</div>
+      <div>${forecastHTML}</div>
     `;
 
-    // Hourly Forecast
-    const hourlyData = data.forecast.forecastday[0].hour;
-    const hourlyHTML = hourlyData.map(hour => {
+    const hourlyHTML = data.forecast.forecastday[0].hour.map(hour => {
       const time = hour.time.split(" ")[1];
       return `
-        <div style="margin: 10px; padding: 10px; border: 1px solid #444; background: #1e1e1e; border-radius: 10px;">
+        <div>
           <h4>${time}</h4>
           <img src="${hour.condition.icon}" alt="icon">
+          <p>${hour.condition.text}</p>
+          <p>🌡 ${hour.temp_c}°C</p>
         </div>
       `;
     }).join("");
 
     document.getElementById("hourlyResult").innerHTML = `
       <h3>Today’s Hourly Forecast</h3>
-      <div style="display: flex; flex-wrap: wrap;">${hourlyHTML}</div>
+      <div>${hourlyHTML}</div>
     `;
 
   } catch (error) {
@@ -106,8 +106,6 @@ async function getWeather() {
   }
 }
 
-document.getElementById("cityInput").addEventListener("keydown", (s) => {
-  if (s.key === "Enter") {
-    getWeather();
-  }
+document.getElementById("cityInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") getWeather();
 });
