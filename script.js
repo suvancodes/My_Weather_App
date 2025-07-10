@@ -67,6 +67,7 @@ async function getWeather() {
       <span><p>⏰Last Updated: <span class="s">${Last_Updated}</span></p></span>
     `;
 
+    // 5-Day Forecast
     const forecastHTML = data.forecast.forecastday.map(day => `
       <div style="margin: 10px; padding: 10px; border: 1px solid #ccc;">
         <h4>${day.date}</h4>
@@ -80,6 +81,24 @@ async function getWeather() {
       <h3>5-Day Forecast</h3>
       <div style="display: flex; flex-wrap: wrap;">${forecastHTML}</div>
     `;
+
+    // Hourly Forecast
+    const hourlyData = data.forecast.forecastday[0].hour;
+    const hourlyHTML = hourlyData.map(hour => {
+      const time = hour.time.split(" ")[1];
+      return `
+        <div style="margin: 10px; padding: 10px; border: 1px solid #444; background: #1e1e1e; border-radius: 10px;">
+          <h4>${time}</h4>
+          <img src="${hour.condition.icon}" alt="icon">
+        </div>
+      `;
+    }).join("");
+
+    document.getElementById("hourlyResult").innerHTML = `
+      <h3>Today’s Hourly Forecast</h3>
+      <div style="display: flex; flex-wrap: wrap;">${hourlyHTML}</div>
+    `;
+
   } catch (error) {
     document.getElementById("weatherResult").innerText = error.message;
   } finally {
