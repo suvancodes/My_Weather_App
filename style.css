@@ -116,3 +116,7 @@ button:hover {
     padding: 0;
   }
 }
+p{
+  font-size: 14px;
+  color: white;
+}
